@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol GetArticlesUseCase {
+public protocol GetArticlesUseCase {
     func getArticles() async throws -> [Article]
 }
 
-final class DefaultGetArticlesUseCase : GetArticlesUseCase {
+public final class DefaultGetArticlesUseCase : GetArticlesUseCase {
         
     private let repository: ArticleRepository
     private let localRepository: LocalArticleRepository
@@ -21,7 +21,7 @@ final class DefaultGetArticlesUseCase : GetArticlesUseCase {
         self.localRepository = localRepository
     }
     
-    func getArticles() async throws -> [Article] {
+    public func getArticles() async throws -> [Article] {
         async let deletedIdsRequest = try localRepository.getDeletedArticlesIds()
         async let articlesRequest = try repository.getArticles()
         let (articles, deletedIds) = try await (articlesRequest, deletedIdsRequest)

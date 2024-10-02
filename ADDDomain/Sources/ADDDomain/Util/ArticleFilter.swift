@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArticleFilter {
+internal struct ArticleFilter {
     
     static func filter(articles: [Article], contains ids: [String]) -> [Article] {
         articles.filter { (article) -> Bool in

@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol SaveLocalArticlesUseCase {
+public protocol SaveLocalArticlesUseCase {
     func saveArticles(_ articles: [Article]) async throws
 }
 
-final class DefaultSaveLocalArticlesUseCase : SaveLocalArticlesUseCase {
+public final class DefaultSaveLocalArticlesUseCase : SaveLocalArticlesUseCase {
     
     private let repositry: LocalArticleRepository
     
@@ -19,7 +19,7 @@ final class DefaultSaveLocalArticlesUseCase : SaveLocalArticlesUseCase {
         self.repositry = repositry
     }
     
-    func saveArticles(_ articles: [Article]) async throws {
+    public func saveArticles(_ articles: [Article]) async throws {
         try await repositry.saveArticles(articles)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol LocalArticleRepository {
+public protocol LocalArticleRepository {
     func getArticles() async throws -> [Article]
     func saveArticles(_ articles: [Article]) async throws
     func addDeletedArticleId(_ articleId: String) async throws
