@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Article {
-    let id: String
-    let title: String
-    let author: String
-    let createdAt: Date
-    let articleUrl: String
+    public let id: String
+    public let title: String
+    public let author: String
+    public let createdAt: Date
+    public let articleUrl: String
 }
